@@ -4,8 +4,8 @@ function initializeCarousel() {
     const nextButton = document.getElementById("nextBtn");
 
     let currentIndex = 0;
-    const itemsToShow = 4;
-    const itemWidth = 266;
+    let itemsToShow = window.innerWidth <= 768 ? 1 : 4; // 1 item para mobile, 4 para desktop
+    const itemWidth = 266; // Largura de cada item (ajuste se necessário)
     let totalItems = 0;
 
     function updateCarousel() {
@@ -33,6 +33,12 @@ function initializeCarousel() {
         } else {
             currentIndex = Math.max(0, totalItems - itemsToShow);
         }
+        updateCarousel();
+    });
+
+    // Atualiza quantidade de itens a mostrar ao redimensionar a tela
+    window.addEventListener("resize", () => {
+        itemsToShow = window.innerWidth <= 768 ? 1 : 4;
         updateCarousel();
     });
 
