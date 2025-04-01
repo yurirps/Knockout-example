@@ -14,24 +14,41 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <!-- dddd -->
+    <!-- product -->
     <div class="pdp container mt-5">
       <div class="product-info-container" data-bind="with: product">
+        <!-- Aqui o binding só funciona se "product" já estiver definido -->
         <div id="product-detail">
           <h1 data-bind="text: title"></h1>
           <img
             class="img-fluid mb-3"
             data-bind="attr: { src: image, alt: title }"
           />
-
           <p>
             <strong>Preço:</strong>
             <span data-bind="text: formattedPrice"></span>
           </p>
           <p><strong>Descrição:</strong></p>
           <p data-bind="text: description"></p>
+          <button class="btn" data-bind="click: $root.showPopup">
+            Comprar
+          </button>
+        </div>
+      </div>
 
-          <button>Comprar</button>
+      <!-- Popup -->
+      <div id="popup" class="popup-overlay" style="display: none">
+        <div class="popup-content">
+          <button class="close-btn">X</button>
+          <div data-bind="with: product">
+            <img
+              class="img-fluid mb-3"
+              data-bind="attr: { src: image, alt: title }"
+            />
+            <p data-bind="text: title"></p>
+            <strong> <p data-bind="text: formattedPrice"></p></strong>
+            <button class="btn" data-bind="click: $root.confirmPurchase">Confirmar Compra</button>
+          </div>
         </div>
       </div>
     </div>

@@ -21,14 +21,14 @@ body {
 
 .carousel {
     display: flex;
-    gap: 16px; 
+    gap: 16px;
     transition: transform 0.5s ease-in-out;
-    width: max-content; 
+    width: max-content;
 }
 
 .carousel-item {
     display: block;
-    width: 250px; 
+    width: 250px;
     background: #fff;
     padding: 10px;
     border-radius: 8px;
@@ -39,7 +39,7 @@ body {
 
 .carousel-item img {
     width: 100%;
-    height: 150px; 
+    height: 150px;
     object-fit: contain;
     border-radius: 8px;
 }
@@ -55,7 +55,7 @@ body {
 }
 
 .carousel-item p {
-    
+
     font-size: 16px;
     font-weight: bold;
     color: #212529 !important;
@@ -63,7 +63,7 @@ body {
 
 #prevBtn,
 #nextBtn {
-    
+
     border: none;
     padding: 10px 15px;
     cursor: pointer;
@@ -90,7 +90,73 @@ body {
 }
 
 .product-info-container {
-    display: flex; /* Define o contêiner como flexível */
-    align-items: flex-end; /* Alinha os itens ao início do contêiner */
-    gap: 20px; /* Adiciona um espaço entre os itens */
+    display: flex;
+    /* Define o contêiner como flexível */
+    align-items: flex-end;
+    /* Alinha os itens ao início do contêiner */
+    gap: 20px;
+    /* Adiciona um espaço entre os itens */
 }
+
+.btn {
+    font-size: 1.125rem;
+    border: #a8f;
+    border-radius: 12px;
+    transition: 0.1s;
+    background: #a8f;
+    color: #fff;
+    padding: 0.6em 1.2em;
+}
+
+.btn:hover{
+    border: 2px solid #a8f;
+    color: #5a0fa0;
+}
+    
+/* popup */
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  /* confirm */
+
+  .confirmationProduct {
+    width: 450px !important; 
+  }
+
+  .home{
+    width: 450px;
+  }
+
+  
+  
